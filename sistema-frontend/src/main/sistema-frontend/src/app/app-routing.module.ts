@@ -4,7 +4,7 @@ import { Routes, RouterModule } from '@angular/router';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: 'intranet',
+    redirectTo: 'sesion',
     pathMatch: 'full',
   },
   {
@@ -13,6 +13,11 @@ const routes: Routes = [
       import('./modules/intranet/intranet.module').then(
         (m) => m.IntranetModule
       ),
+  },
+  {
+    path: 'sesion',
+    loadChildren: () =>
+      import('./modules/sesion/sesion.module').then((m) => m.SesionModule),
   },
   {
     path: '**',
